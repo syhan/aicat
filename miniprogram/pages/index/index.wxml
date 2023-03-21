@@ -1,0 +1,47 @@
+<view class="page" data-weui-theme="{{theme}}">
+  <view class="page__hd" style="width: 100%; height: 55px; position: fixed; z-index: 10;">
+    <view class="weui-panel">
+      <view class="weui-panel_access">
+        <view class="weui-flex" style="margin: 10px; justify-content: space-between;">
+          <view class="weui-flex" style="width: 10%;">
+
+            <text style="color: black; font-size: 18px; font-weight: bold;">Header</text>
+            <text style="color: black; font-size: 14px;">Section of content</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-panel weui-panel_access" style="top: 90px;">
+      <view class="weui-flex" style="justify-content: space-around; flex-wrap: wrap;">
+          <view wx:for="{{pictures}}" wx:key="index">
+            <view style="position: relative; width: 380px; height: 380px;">
+              <image class="" src="{{item.src}}" mode="aspectFill" style="width: 100%; height: 98%;" ></image>
+
+              <view style="position: absolute; top: 10px; right: 10px; display: flex; flex-direction: column; width: 40px;">
+ 
+                <image src="../../images/avatar.png" style="width: 40px; height: 40px; border-radius: 50%;"></image>
+                <button size="mini" style="background-color: rgba(22, 10, 10, 0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px;">
+                  <image src="../../images/fi_heart_filled.png" style="width: 15px; height: 15px;"></image>
+                </button>
+                <button size="mini" style="background-color: rgba(22, 10, 10, 0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px;">
+                  <image src="../../images/comment.png" style="width: 15px; height: 15px;"></image>
+                </button>
+                <button size="mini" style="background-color: rgba(22, 10, 10, 0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px;">
+                  <image src="../../images/fav.png" style="width: 15px; height: 15px;"></image>
+                </button>
+                <button size="mini" open-type="share" style="background-color: rgba(22, 10, 10, 0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px;">
+                  <image src="../../images/share.png" style="width: 15px; height: 15px;"></image>
+                </button>
+              </view>
+              <view style="position: absolute; bottom: 20px; left: 10px; right: 10px; background-color: white; padding: 10px; border-radius: 2%;">
+                <text style="color: black; font-size: 18px; font-weight: bold;">叨乐</text>
+                <text style="color: gray; font-size: 12px;">跟着主人走南闯北，乘坐快艇追逐大雁，在峡谷漂流中当落汤鸡，跟着铲屎官出海钓鱼，看过清晨......</text>
+              </view>
+            </view>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>

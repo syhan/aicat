@@ -1,0 +1,67 @@
+// pages/index/index.js
+Page({
+
+  /**
+   * Page initial data
+   */
+  data: {
+    pictures: [{"src": "../../images/cat1.png"}, {"src":"../../images/cat2.png"},
+    {"src": "../../images/cat1.jpg"}, {"src":"../../images/cat2.jpg"},]
+  },
+
+  /**
+   * Lifecycle function--Called when page load
+   */
+  onLoad(options) {
+    
+  },
+
+  /**
+   * Lifecycle function--Called when page is initially rendered
+   */
+  onReady() {
+
+  },
+
+  /**
+   * Lifecycle function--Called when page show
+   */
+  onShow() {
+
+  },
+
+  /**
+   * Lifecycle function--Called when page hide
+   */
+  onHide() {
+
+  },
+
+  /**
+   * Lifecycle function--Called when page unload
+   */
+  onUnload() {
+
+  },
+
+  /**
+   * Page event handler function--Called when user drop down
+   */
+  onPullDownRefresh() {
+
+  },
+
+  /**
+   * Called when page reach bottom
+   */
+  onReachBottom() {
+
+  },
+
+  /**
+   * Called when user click on the top right corner to share
+   */
+  onShareAppMessage() {
+
+  }
+})
