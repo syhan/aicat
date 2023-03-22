@@ -6,7 +6,7 @@ Page({
    */
   data: {
     pictures: [{"src": "../../images/cat1.png"}, {"src":"../../images/cat2.png"},
-    {"src": "../../images/cat1.jpg"}, {"src":"../../images/cat2.jpg"},]
+    {"src": "../../images/cat3.jpg"}, {"src":"../../images/cat4.jpg"},]
   },
 
   /**

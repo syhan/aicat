@@ -5,9 +5,9 @@
     "pages/chat/chat"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#000000",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#01BFBD",
     "navigationBarTitleText": "",
     "navigationBarTextStyle": "black"
   },
@@ -26,8 +26,8 @@
       {
         "pagePath": "pages/chat/chat",
         "text": "",
-        "iconPath": "images/self.png",
-        "selectedIconPath": "images/self.png"
+        "iconPath": "images/post.png",
+        "selectedIconPath": "images/post.png"
       },
       {
         "pagePath": "pages/self/self",
