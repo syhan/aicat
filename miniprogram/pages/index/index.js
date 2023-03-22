@@ -5,8 +5,11 @@ Page({
    * Page initial data
    */
   data: {
-    pictures: [{"src": "../../images/cat1.png"}, {"src":"../../images/cat2.png"},
-    {"src": "../../images/cat3.jpg"}, {"src":"../../images/cat4.jpg"},]
+    cats: [
+      {"name": "叨乐", "sex": "male", "description": "跟着主人走南闯北，乘坐快艇追逐大雁，在峡谷漂流中当落汤鸡，跟着铲屎官出海钓鱼，看过清晨......", "liked": true, "img": "../../images/cat1.png", "master": ""}, 
+      {"name": "土豆", "sex": "male", "description": "土豆喜欢吃土豆", "liked": false, "img":"../../images/cat2.png"},
+      {"name": "仔仔", "sex": "male", "description": "籍贯美国，上海户口，旅居江苏", "liked": true, "img": "../../images/cat3.jpg"}, 
+    ]
   },
 
   /**
