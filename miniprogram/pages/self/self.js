@@ -5,7 +5,18 @@ Page({
    * Page initial data
    */
   data: {
-
+    self: {
+      nickname: "铲屎官小美",
+      avatar: "../../images/avatar.png",
+      pets: [
+        "../../images/cat1_avatar.png",
+        "../../images/cat2_avatar.png",
+        "../../images/cat3_avatar.png",
+      ],
+      daysSinceRegistration: 285,
+      totalLiked: 42,
+      totalFavorited: 15
+    }
   },
 
   /**

@@ -1,2 +1,56 @@
-<!--pages/self/self.wxml-->
-<text>pages/self/self.wxml</text>
+<view class="page" data-weui-theme="{{theme}}">
+  <view class="page__hd">
+    <view class="weui-media-box" style="background: url(../../images/self_bg.png) no-repeat center; height: 165px; background-size: 92%;">
+      <view class="weui-media-box_appmsg">
+        <view class="weui-media-box__hd">
+          <image style="width: 80px; height: 80px; border-radius: 50%; border: 3px white solid; position: relative; left: 33rpx; top: 28rpx" src="{{self.avatar}}"></image>
+        </view>
+        <view class="weui-media-box__bd" style="vertical-align: bottom; margin-left: 20px;">
+          <view style="display: flex; flex-direction: column;">
+            <text style="position: relative; left: 48rpx; top: 47rpx; font-size: 20px; color: white">{{self.nickname}}</text>
+            <text style="position: relative; left: 48rpx; top: 55rpx; font-size: 12px; color: white">来到喵星{{self.daysSinceRegistration}}天</text>
+          </view>
+        </view>
+      </view>
+      <view style="background-color: rgba(22, 10, 10, 0.2); height: 48px; width: 90%; position: relative; left: 35rpx; top: 89rpx; border-radius: 10px">
+        <text style="position: relative; font-size: 16px; color: white; left: 33rpx; top: 22rpx">我的小宠</text>
+        <view wx:for="{{self.pets}}" wx:for-item="image" wx:key="*this">
+          <image src="{{image}}" style="width: 30px; height: 30px; border-radius: 50%; position: absolute; border: 2px white solid; left: {{213+index*18}}px; top: 13rpx"></image>
+        </view>
+        <image src="../../images/right.png" style="width: 24px; height: 24px; position: relative; left: 542rpx; top: -22rpx"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="page__bd">
+    <view class="kind-list">
+      <view class="kind-list__item" style="margin-left: 19px; margin-right: 19px; border-radius: 5px;">
+        <view class="weui-flex kind-list__item-hd">
+          <view class="weui-flex__item">喜欢 · {{self.totalLiked}}</view>
+          <image class="kind-list__img" src="../../images/liked.png" style="width: 20.9px; height: 18.23px;"></image>
+          <view style="height: 24px; border-right: 1px solid #F5F6F9; margin-left: 10px; margin-right: 10px;"></view>
+          <view class="weui-flex__item">收藏 · {{self.totalFavorited}}</view>
+          <image class="kind-list__img" src="../../images/favorited.png" style="width: 20.9px; height: 18.23px;"></image>
+        </view>
+      </view>
+      <view class="kind-list__item" style="margin-left: 19px; margin-right: 19px; border-radius: 5px;">
+        <view class="weui-flex kind-list__item-hd">
+          <view class="weui-flex__item">通知</view>
+          <image class="kind-list__img" src="../../images/bell.png" style="width: 20px; height: 20px;"></image>
+        </view>
+      </view>
+      <view class="kind-list__item" style="margin-left: 19px; margin-right: 19px; border-radius: 5px;">
+        <view class="weui-flex kind-list__item-hd">
+          <view class="weui-flex__item">关于</view>
+          <image class="kind-list__img" src="../../images/info.png" style="width: 20px; height: 20px;"></image>
+        </view>
+      </view>
+      <view class="kind-list__item" style="margin-left: 19px; margin-right: 19px; border-radius: 5px;">
+        <view class="weui-flex kind-list__item-hd">
+          <view class="weui-flex__item">即将开放的玩法</view>
+          <image class="kind-list__img" src="../../images/sandbox.png" style="width: 20px; height: 20px;"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
