@@ -1,0 +1,77 @@
+<view class="page" data-weui-theme="{{theme}}">
+  <view class="page__hd">
+    <view class="weui-flex">
+      <view class="weui-flex__item weui-flex" style="justify-content: center; width: 100%;">
+        <view style="width: 100%; height: 380px;">
+          <swiper autoplay="true" indicator-dots="true" snap-to-edge="true" style="width: 100%; height: 420px;">
+              <block wx:for="{{pet.images}}" wx:key="key">
+                <swiper-item>
+                  <view class="swiper-item" style="height: 100%;">
+                    <image src="{{item}}" mode="scaleToFill" style="width: 100%; height: 100%;" />
+                  </view>
+                </swiper-item>
+              </block>
+          </swiper>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title">
+            <text>{{pet.name}}</text>
+            <image src="{{pet.sex === 'male' ? '../../images/male.png' : '../../images/female.png'}}" style="width: 16px; height: 16px; position: relative; left: 15rpx; top: 4rpx"></image>
+          </view>
+        </view>
+        <view class="weui-media-box__info__meta_extra" style="padding-right: 20px;">
+          <rich-text nodes="{{pet.description}}" style="color: #505A62"></rich-text>
+        </view>
+      </view>
+    </view>
+    
+  </view>
+  <view class="page__ft">
+    <view class="weui-panel weui-panel_access" style="position: fixed; bottom: 0px; width: 100%;">
+      <view class="weui-panel__bd">
+        <view class="weui-cells">
+          <view class="weui-cell" style="display: flex; flex-direction: row; align-content: space-around;">
+            <view class="weui-cell__hd" style="width: 140px; background: #F6F8FB; border-radius: 20px; position: relative; left: 58rpx; top: -2rpx">
+              <image src="../../images/input.png" style="height: 24px; width: 82px; position: relative; left: 29rpx; top: 6rpx" mode="scaleToFit"></image>
+            </view>
+            <view style="width: 100px;"></view>
+            <view class="weui-cell__bd">
+              <view style="display: flex; flex-direction: row; align-content: space-around; width: 300rpx; height: 58rpx; box-sizing: border-box">
+                <view style="display: flex; flex-direction: column; align-items: center; width: 120rpx; height: 60rpx; box-sizing: border-box">
+                  <image src="../../images/liked.png" mode="aspectFit" style="width: 20.9px; height: 18.23px;"></image>
+                  <text style="font-size: 10px; color: #505A62;">{{pet.totalLiked}}</text>
+                </view>
+                <view style="display: flex; flex-direction: column; align-items: center; width: 120rpx; height: 60rpx; box-sizing: border-box;">
+                  <image src="../../images/favorited.png" mode="aspectFit" style="width: 20.9px; height: 18.23px;"></image>
+                  <text style="font-size: 10px; color: #505A62;">{{pet.totalFavorited}}</text>
+                </view>
+                <view style="display: flex; flex-direction: column; align-items: center; width: 120rpx; height: 60rpx; box-sizing: border-box;">
+                  <image src="../../images/comments.png" mode="aspectFit" style="width: 20.9px; height: 18.23px;"></image>
+                  <text style="font-size: 10px; color: #505A62;">{{pet.totalComments}}</text>
+                </view>
+                <view style="display: flex; flex-direction: column; align-items: center; width: 120rpx; height: 60rpx; box-sizing: border-box;">
+                  <image src="../../images/shared.png" mode="aspectFit" style="width: 20.9px; height: 18.23px;"></image>
+                  <text style="font-size: 10px; color: #505A62;">{{pet.totalShared}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <mp-half-screen-dialog show="{{showBarrageDialog}}" wx:if="{{enableBarrage}}">
+    <view slot="footer">
+      <input class="send-box" placeholder="发个友善的弹幕见证当下" value="{{barrageContent}}" maxlength="20" confirm-type="send" bindinput="bindBarrage" bindconfirm="sendBarrage"></input>
+      <button size="mini" bindtap="sendBarrage">
+        <mp-icon icon="done" color="rgba(0, 0, 0, .9)" size="24"></mp-icon>
+      </button>
+    </view>
+  </mp-half-screen-dialog> -->
+</view>

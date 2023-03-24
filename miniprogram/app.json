@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/self/self",
-    "pages/chat/chat"
+    "pages/chat/chat",
+    "pages/pet/pet"
   ],
   "window": {
     "backgroundColor": "#000000",

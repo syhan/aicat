@@ -19,33 +19,35 @@
     <view class="weui-panel weui-panel_access">
       <view class="weui-flex" style="justify-content: space-around; flex-wrap: wrap;">
           <view wx:for="{{cats}}" wx:key="index">
-            <view style="position: relative; width: 380px; height: 380px;">
-              <image class="" src="{{item.img}}" mode="aspectFill" style="width: 100%; height: 98%;" ></image>
-              <view style="position: absolute; top: 19rpx; right: 10px; display: flex; flex-direction: column; width: 73rpx; justify-content: space-between; height: 397rpx; box-sizing: border-box; left: 598rpx">
- 
-                <image src="../../images/avatar.png" style="width: 40px; height: 40px; border-radius: 50%;"></image>
-                <button size="mini" style="background-color: rgba(22, 10, 10, 0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px;">
-                  <image src="../../images/fi_heart_filled.png" style="width: 15px; height: 15px;"></image>
-                </button>
-                <button size="mini" style="background-color: rgba(22, 10, 10, 0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px;">
-                  <image src="../../images/comment.png" style="width: 15px; height: 15px;"></image>
-                </button>
-                <button size="mini" style="background-color: rgba(22, 10, 10, 0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px;">
-                  <image src="../../images/fav.png" style="width: 15px; height: 15px;"></image>
-                </button>
-                <button size="mini" open-type="share" style="background-color: rgba(22, 10, 10, 0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px;">
-                  <image src="../../images/share.png" style="width: 15px; height: 15px;"></image>
-                </button>
-              </view>
-              <view style="position: absolute; bottom: 20px; left: 10px; right: 10px; background-color: white; padding: 10px; border-radius: 15px; display: flex; flex-direction: column;">
-                <view>
-                  <text style="color: #38434D; font-size: 18px;">{{item.name}}</text>
-                  <image src="../../images/male.png" style="width: 16px; height: 16px; position: relative; left: 15rpx; top: 4rpx"></image>
+            <navigator url="/pages/pet/pet?id={{item.id}}">
+              <view style="position: relative; width: 380px; height: 380px;">
+                <image class="" src="{{item.img}}" mode="aspectFill" style="width: 100%; height: 98%;" ></image>
+                <view style="position: absolute; top: 19rpx; right: 10px; display: flex; flex-direction: column; width: 73rpx; justify-content: space-between; height: 397rpx; box-sizing: border-box; left: 598rpx">
+  
+                  <image src="../../images/avatar.png" style="width: 40px; height: 40px; border-radius: 50%;"></image>
+                  <button size="mini" style="background-color: rgba(22, 10, 10, 0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px;">
+                    <image src="../../images/fi_heart_filled.png" style="width: 15px; height: 15px;"></image>
+                  </button>
+                  <button size="mini" style="background-color: rgba(22, 10, 10, 0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px;">
+                    <image src="../../images/comment.png" style="width: 15px; height: 15px;"></image>
+                  </button>
+                  <button size="mini" style="background-color: rgba(22, 10, 10, 0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px;">
+                    <image src="../../images/fav.png" style="width: 15px; height: 15px;"></image>
+                  </button>
+                  <button size="mini" open-type="share" style="background-color: rgba(22, 10, 10, 0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px;">
+                    <image src="../../images/share.png" style="width: 15px; height: 15px;"></image>
+                  </button>
                 </view>
-                
-                <text style="color: gray; font-size: 12px;">{{item.description}}</text>
+                <view style="position: absolute; bottom: 20px; left: 10px; right: 10px; background-color: white; padding: 10px; border-radius: 15px; display: flex; flex-direction: column;">
+                  <view>
+                    <text style="color: #38434D; font-size: 18px;">{{item.name}}</text>
+                    <image src="../../images/male.png" style="width: 16px; height: 16px; position: relative; left: 15rpx; top: 4rpx"></image>
+                  </view>
+                  
+                  <text style="color: gray; font-size: 12px;">{{item.description}}</text>
+                </view>
               </view>
-            </view>
+            </navigator>
           </view>
       </view>
     </view>
