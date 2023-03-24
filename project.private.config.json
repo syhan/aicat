@@ -55,5 +55,6 @@
       ]
     }
   },
-  "projectname": "aicat"
+  "projectname": "aicat",
+  "libVersion": "2.30.2"
 }
