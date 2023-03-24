@@ -1,2 +1,53 @@
-<!--pages/chat/chat.wxml-->
-<text>pages/chat/chat.wxml</text>
+<view class="container">
+  <scroll-view class="message-list" scroll-y="true">
+    <view class="message-item">
+      <view class="avatar"></view>
+      <view class="message-content">
+        <view class="message-bubble">
+          <view class="message-text">你好！</view>
+        </view>
+        <view class="message-time">09:00</view>
+      </view>
+    </view>
+    <view class="message-item right">
+      <view class="avatar"></view>
+      <view class="message-content">
+        <view class="message-bubble">
+          <view class="message-text">你好啊，有什么需要帮助的吗？</view>
+        </view>
+        <view class="message-time">09:01</view>
+      </view>
+    </view>
+    <view class="message-item">
+      <view class="avatar"></view>
+      <view class="message-content">
+        <view class="message-bubble">
+          <view class="message-text">我想了解一下产品的规格和价格。</view>
+        </view>
+        <view class="message-time">09:02</view>
+      </view>
+    </view>
+    <view class="message-item right">
+      <view class="avatar"></view>
+      <view class="message-content">
+        <view class="message-bubble">
+          <view class="message-text">好的，请问您需要哪种产品的信息？</view>
+        </view>
+        <view class="message-time">09:03</view>
+      </view>
+    </view>
+    <view class="message-item">
+      <view class="avatar"></view>
+      <view class="message-content">
+        <view class="message-bubble">
+          <view class="message-text">我需要了解手机和平板电脑的规格和价格。</view>
+        </view>
+        <view class="message-time">09:04</view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="input-box">
+    <input class="input" placeholder="请输入消息"></input>
+    <button class="send-btn">发送</button>
+  </view>
+</view>

@@ -5,14 +5,14 @@ Page({
    * Page initial data
    */
   data: {
-
+    messages: []
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-
+    
   },
 
   /**

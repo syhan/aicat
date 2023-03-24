@@ -23,7 +23,7 @@
         "pagePath": "pages/index/index",
         "text": "",
         "iconPath": "images/home.png",
-        "selectedIconPath": "images/home.png"
+        "selectedIconPath": "images/home_selected.png"
       },
       {
         "pagePath": "pages/post/post",
@@ -35,7 +35,7 @@
         "pagePath": "pages/self/self",
         "text": "",
         "iconPath": "images/self.png",
-        "selectedIconPath": "images/self.png"
+        "selectedIconPath": "images/self_selected.png"
       }
     ]
   },

@@ -37,7 +37,16 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-    
+    // wx.request({
+    //   url: 'https://cat.isekai.me/api/v1/attachments',
+    //   success: (res) => {
+    //     this.setData({
+    //       cats: res.data['data']['attachments'],
+    //       page: res.data['data']['page'],
+    //       total: res.data['data']['total']
+    //     })
+    //   }
+    // })
   },
 
   /**
@@ -51,7 +60,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-
+    // console.log(this.data)
   },
 
   /**
