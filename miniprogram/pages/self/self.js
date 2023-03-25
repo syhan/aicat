@@ -1,4 +1,5 @@
 // pages/self/self.js
+const { request } = require('../../http/request.js');
 Page({
 
   /**
@@ -23,7 +24,12 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-
+    const that = this;
+    request({url: '/api/v1/my', that}).then(res => {
+      this.setData({
+        self: res['data']['user']
+      })
+    })
   },
 
   /**

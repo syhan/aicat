@@ -1,4 +1,5 @@
 // pages/index/index.js
+const {request} = require('../../http/request.js');
 Page({
 
   /**
@@ -37,6 +38,24 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
+    console.log(this.data)
+    const page = this.data.page || 1
+    const data = {
+      page,
+      per_page: 10
+    }
+    const that = this;
+    request({
+      url: '/api/v1/attachments', 
+      data,
+      that
+    }).then(res => {
+      this.setData({
+        cats: res['data']['attachments'],
+        page: res['data']['page'],
+        total: res['data']['total']
+      })
+    })
     // wx.request({
     //   url: 'https://cat.isekai.me/api/v1/attachments',
     //   success: (res) => {
