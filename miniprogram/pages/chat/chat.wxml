@@ -34,7 +34,7 @@
   </scroll-view>
   <form bindsubmit="createMessage">
     <view class="input-box">
-      <input class="input" placeholder="请输入消息" name="content"></input>
+      <input class="input" value="{{input}}" placeholder="请输入消息" name="content"></input>
       <button class="send-btn" form-type="submit">发送</button>
     </view>
   </form>

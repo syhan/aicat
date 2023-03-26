@@ -7,10 +7,15 @@ Page({
   data: {
     messages: [],
     scroolTop: 10000,
+    input: "",
   },
-  createMessage: (e) => {
+  createMessage(e) {
     const content = e.detail.value.content;
     const that = this;
+    this.setData({input: ""})
+    if (content == "") {
+      return 
+    }
     request({
       url: "/api/v1/chats/messages",
       method: "POST",
@@ -19,10 +24,9 @@ Page({
     }).then((res) => {
       that.setData({
         messages: res["data"]["messages"],
-        scrollIntoView: `chat-${res["data"]["messages"].length - 1}`
+        scrollIntoView: `chat-${res["data"]["messages"].length - 1}`,
       });
     });
-    console.log(content);
   },
 
   /**

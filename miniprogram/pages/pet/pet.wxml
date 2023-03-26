@@ -2,16 +2,10 @@
   <view class="page__hd">
     <view class="weui-flex">
       <view class="weui-flex__item weui-flex" style="justify-content: center; width: 100%;">
-        <view style="width: 100%; height: 380px;">
-          <swiper autoplay="true" indicator-dots="true" snap-to-edge="true" style="width: 100%; height: 420px;">
-              <block wx:for="{{pet.images}}" wx:key="key">
-                <swiper-item>
-                  <view class="swiper-item" style="height: 100%;">
-                    <image src="{{item}}" mode="scaleToFill" style="width: 100%; height: 100%;" />
-                  </view>
-                </swiper-item>
-              </block>
-          </swiper>
+        <view style="width: 100%;">
+          <view class="swiper-item">
+            <image src="https://cat.isekai.me{{pet.document}}" mode="aspectFit" style="width: 100%;" />
+          </view>
         </view>
       </view>
     </view>
@@ -21,12 +15,12 @@
       <view class="weui-panel__bd">
         <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title">
-            <text>{{pet.name}}</text>
-            <image src="{{pet.sex === 'male' ? '../../images/male.png' : '../../images/female.png'}}" style="width: 16px; height: 16px; position: relative; left: 15rpx; top: 4rpx"></image>
+            <text>{{pet.animals[0].name}}</text>
+            <image src="{{pet.animals[0].sex === 'male' ? '../../images/male.png' : '../../images/female.png'}}" style="width: 16px; height: 16px; position: relative; left: 15rpx; top: 4rpx"></image>
           </view>
         </view>
         <view class="weui-media-box__info__meta_extra" style="padding-right: 20px;">
-          <rich-text nodes="{{pet.description}}" style="color: #505A62"></rich-text>
+          <rich-text nodes="{{pet.intro}}" style="color: #505A62"></rich-text>
         </view>
       </view>
     </view>
