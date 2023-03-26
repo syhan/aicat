@@ -1,2 +1,22 @@
 <!--pages/post/post.wxml-->
-<text>pages/post/post.wxml</text>
+<view wx:for="{{attachments}}" wx:key="id" class="attachment">
+  <image src="{{item}}" mode="aspectFill" />
+</view>
+<view class='box' bindtap='selectImages'>上传</view>
+
+<form bindsubmit="customSubmit">
+  <view class="input-box">
+    <input class="name" value="{{name}}" placeholder="宠物昵称" name="name"></input>
+    <radio-group name="sex">
+      <label>
+        <radio value="female" checked="{{sex == 'female'}}">女</radio>
+      </label>
+      <label>
+        <radio value="male" checked="{{sex == 'male'}}">男</radio>
+      </label>
+    </radio-group>
+    <input class="intro" value="{{intro}}" placeholder="宠物描述" name="intro"></input>
+    <input class="location" value="{{location}}" placeholder="宠物所在地" name="location"></input><!-- Todo 调用微信的接口获取location 数据--> 
+    <button class="send-btn" form-type="submit">发送</button>
+  </view>
+</form>

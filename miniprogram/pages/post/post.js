@@ -5,9 +5,29 @@ Page({
    * Page initial data
    */
   data: {
-
+    attachments: [],
+    name: '',
+    intro: '',
+    sex: 'female',
   },
 
+  selectImages() {
+    wx.chooseImage({
+      count: 9,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: (res) => {
+        this.setData({
+          attachments: res.tempFilePaths
+        })
+      }
+    })
+  },
+
+  customSubmit(e) {
+    const infos = e.detail.value
+    console.log({...infos, attachments: this.data.attachments})
+  },
   /**
    * Lifecycle function--Called when page load
    */
