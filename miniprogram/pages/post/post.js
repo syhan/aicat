@@ -5,24 +5,44 @@ Page({
    * Page initial data
    */
   data: {
-    attachments: [],
+    photos: [],
     name: '',
     intro: '',
     sex: 'female',
+    location: '添加地点'
   },
 
   selectImages() {
+    var that = this;
+
     wx.chooseImage({
       count: 9,
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success: (res) => {
-        this.setData({
-          attachments: res.tempFilePaths
+        that.setData({
+          photos: that.data.photos.concat(res.tempFilePaths)
         })
       }
     })
   },
+
+  uplaodFile(files) {
+    console.log('upload files', files)
+    // 文件上传的函数，返回一个promise
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('as if it works')
+        }, 1000)
+    })
+},
+
+  previewImage: function(e){
+    wx.previewImage({
+        current: e.currentTarget.id, // 当前显示图片的http链接
+        urls: this.data.files // 需要预览的图片http链接列表
+    })
+},
 
   customSubmit(e) {
     const infos = e.detail.value
@@ -32,7 +52,26 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
+    wx.setNavigationBarTitle({
+      title: '晒宠物',
+    })
 
+    this.setData({
+      selectImages: this.selectImages.bind(this),
+      uplaodFile: this.uplaodFile.bind(this)
+  })
+  },
+
+  chooseFemale() {
+    this.setData({
+      sex: 'female'
+    })
+  },
+  
+  chooseMale() {
+    this.setData({
+      sex: 'male'
+    })
   },
 
   /**

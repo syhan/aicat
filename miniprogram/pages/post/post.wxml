@@ -1,22 +1,56 @@
-<!--pages/post/post.wxml-->
-<view wx:for="{{attachments}}" wx:key="id" class="attachment">
-  <image src="{{item}}" mode="aspectFill" />
-</view>
-<view class='box' bindtap='selectImages'>上传</view>
+<view class="page" data-weui-theme="{{theme}}">
+  <view class="page__bd">
+    <form bindsubmit="customSubmit">
+      <mp-cells>
+        <mp-cell>
+          <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{photos}}" max-count="5" title="" tips=""></mp-uploader>
+        </mp-cell>
+      </mp-cells>
 
-<form bindsubmit="customSubmit">
-  <view class="input-box">
-    <input class="name" value="{{name}}" placeholder="宠物昵称" name="name"></input>
-    <radio-group name="sex">
-      <label>
-        <radio value="female" checked="{{sex == 'female'}}">女</radio>
-      </label>
-      <label>
-        <radio value="male" checked="{{sex == 'male'}}">男</radio>
-      </label>
-    </radio-group>
-    <input class="intro" value="{{intro}}" placeholder="宠物描述" name="intro"></input>
-    <input class="location" value="{{location}}" placeholder="宠物所在地" name="location"></input><!-- Todo 调用微信的接口获取location 数据--> 
-    <button class="send-btn" form-type="submit">发送</button>
+      
+      <mp-cells>
+        <mp-cell>
+          <input class="name" value="{{name}}" placeholder="填写宠物昵称" name="name"></input>
+        </mp-cell>
+      </mp-cells>
+      <mp-cells>
+        <mp-cell>
+          <view style="width: 693rpx; height: 106rpx; display: block; box-sizing: border-box">
+            <view style="width: 48%; height: 56px; border-radius: 12px; border: 1px solid #FF8B84;" class="{{sex === 'female' ? '' :'deactivated'}}" bindtap="chooseFemale">
+              <view style="background: #FFF2F1; border-radius: 50%; width: 32px; height: 32px; position: relative; left: 37rpx; top: 22rpx">
+                <image src="../../images/female.png" style="width: 17px; height: 17px; position: relative; left: 14rpx; top: 12rpx"></image>
+              </view>
+              <text style="color: #FF8B84; position: relative; left: 130rpx; top: -29rpx; font-size: 16px">女孩子</text>
+            </view>
+            <view style="width: 48%; height: 56px; border-radius: 12px; border: 1px solid #1AB1C5; position: relative; left: 357rpx; top: -106rpx" class="{{sex === 'male' ? '' :'deactivated'}}" bindtap="chooseMale">
+              <view style="background: #E6F7F8; border-radius: 50%; width: 32px; height: 32px; position: relative; left: 37rpx; top: 22rpx">
+                <image src="../../images/male.png" style="width: 17px; height: 17px; position: relative; left: 14rpx; top: 12rpx"></image>
+              </view>
+              <text style="color: #01A8BF; position: relative; left: 130rpx; top: -29rpx; font-size: 16px">男孩子</text>
+            </view>
+          </view>
+        </mp-cell>
+      </mp-cells>
+      <mp-cells>
+        <mp-cell>
+          <textarea value="{{description}}" placeholder="添加描述" maxlength="-1" style="width: 685rpx; height: 272rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx"></textarea>
+        </mp-cell>
+      </mp-cells>
+      <mp-cells>
+        <mp-cell>
+          <view>
+            <image src="../../images/map-pin.png" style="width: 24px; height: 24px"></image>
+            <text style="color: #505A62; position: relative; left: 24rpx; top: -11rpx">{{location}}</text>
+          </view>
+        </mp-cell>
+      </mp-cells>
+      <mp-cells>
+        <mp-cell>
+          <view class="weui-form__opr-area">
+            <button type="primary" form-type="submit" style="width: 90%; position: relative; left: 1rpx; top: 111rpx; background-color: #01BFBD">发布</button>
+          </view>
+        </mp-cell>
+      </mp-cells>
+    </form>
   </view>
-</form>
+</view>

@@ -1,1 +1,5 @@
 /* pages/post/post.wxss */
+
+.deactivated {
+  filter: grayscale(100%);
+}
