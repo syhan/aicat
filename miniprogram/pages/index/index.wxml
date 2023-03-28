@@ -8,8 +8,9 @@
               <text style="color: #505A62; font-size: 16px; position: relative; left: 28rpx; top: 28rpx">AI为你智能选宠</text>
               <text style="color: #889696; font-size: 12px; position: relative; left: 28rpx; top: 28rpx; width: 370rpx; height: 69rpx; display: block; box-sizing: border-box">两分钟为你推荐最合适的宠物</text>
             </view>
-            <navigator url="/pages/chat/chat" style="width: 36px; height: 36px; display: block; box-sizing: border-box">
-              <image src="../../images/chat.png" mode="scaleToFill" style="width: 36px; height: 36px; position: relative; left: 97rpx; top: 33rpx"></image>
+            <navigator  url="/pages/chat/chat" style="width: 36px; height: 36px; display: block; box-sizing: border-box">
+              <image animation="{{animation}}" src="../../images/chat.png" mode="scaleToFill" style="width: 36px; height: 36px; position: relative; left: 97rpx; top: 33rpx"></image>
+              
             </navigator>
         </view>
     </view>

@@ -10,7 +10,7 @@ Page({
     name: '',
     intro: '',
     sex: 'female',
-    location: '添加地点',
+    location: '添加地点(Coming soon)',
     attachment_ids: []
   },
 

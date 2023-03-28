@@ -1,11 +1,13 @@
 <view class="container">
   <scroll-view class="message-list" scroll-into-view="{{scrollIntoView}}" bindscroll="onScroll" scroll-y="true">
     <view class="message-item">
-      <view class="avatar"></view>
+      <view class="avatar">
+        <image class="avatar" src="../../images/robot2.png"></image>
+      </view>
       <view class="message-content">
         <view class="message-bubble">
           <view class="message-text">
-            欢迎xxxxxxxx，你可以向我任意提问。如果你能告诉我一些关于你的职业/兴趣/性格/性别等信息，为你匹配的宠物将更加精确。
+            欢迎毛绒绒，你可以向我任意提问。如果你能告诉我一些关于你的职业/兴趣/性格/性别等信息，为你匹配的宠物将更加精确。
           </view>
         </view>
         <view class="message-time">{{item.time}}</view>
@@ -13,7 +15,9 @@
     </view>
     <view wx:for="{{messages}}" wx:key="chat">
       <view class="message-item" id="chat-{{index}}" wx:if="{{item.role == 'assistant'}}">
-        <view class="avatar"></view>
+        <view class="avatar">
+          <image class="avatar" src="../../images/robot2.png"></image>
+        </view>
         <view class="message-content">
           <view class="message-bubble">
             <view class="message-text">{{item.content}}</view>

@@ -25,11 +25,12 @@ Page({
    */
   onLoad(options) {
     const that = this;
-    request({url: '/api/v1/my', that}).then(res => {
-      this.setData({
-        self: res['data']['user']
-      })
-    })
+    // request({url: '/api/v1/my', that}).then(res => {
+    //   this.setData({
+    //     self: res['data']['user']
+    //   })
+    // })
+    // coming soon
   },
 
   /**
@@ -43,7 +44,23 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-
+    console.log(123)
+    wx.showToast({
+      title: '施工中',
+      icon: 'error',
+      duration: 2000,
+      success: () => {
+        setTimeout(() => {
+          wx.switchTab({
+            url: '/pages/index/index',
+          })
+        }, 2000)
+        this.onLoad()
+      },
+      complete: (e) => {
+        console.log(e)
+      },
+    })
   },
 
   /**
