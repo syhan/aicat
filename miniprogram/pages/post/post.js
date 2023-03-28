@@ -72,14 +72,13 @@ Page({
 
   customSubmit(e) {
     const infos = e.detail.value
-    console.log({})
+    console.log(infos)
     request({
       url: '/api/v1/attachments/submit',
       method: 'POST',
       data: {
         ...infos,
         attachment_ids: this.data.attachment_ids,
-        intro: this.data.intro,
         sex: this.data.sex
       }
     }).then(res => {
