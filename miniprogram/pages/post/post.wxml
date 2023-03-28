@@ -10,7 +10,7 @@
       
       <mp-cells>
         <mp-cell>
-          <input class="name" value="{{name}}" placeholder="填写宠物昵称" name="name"></input>
+          <input class="name" value="{{name}}" placeholder="填写宠物昵称" name="animal_name"></input>
         </mp-cell>
       </mp-cells>
       <mp-cells>
@@ -33,7 +33,7 @@
       </mp-cells>
       <mp-cells>
         <mp-cell>
-          <textarea value="{{description}}" placeholder="添加描述" maxlength="-1" style="width: 685rpx; height: 272rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx"></textarea>
+          <textarea name="intro" value="{{intro}}" placeholder="添加描述" maxlength="-1" style="width: 685rpx; height: 272rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx"></textarea>
         </mp-cell>
       </mp-cells>
       <mp-cells>

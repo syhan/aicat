@@ -15,8 +15,8 @@ Page({
         "../../images/cat3_avatar.png",
       ],
       daysSinceRegistration: 285,
-      totalLiked: 42,
-      totalFavorited: 15
+      totalLiked: 0,
+      totalFavorited: 0
     }
   },
 

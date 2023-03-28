@@ -96,7 +96,25 @@ Page({
    * Called when page reach bottom
    */
   onReachBottom() {
-
+    const page = Number(this.data.page) + 1
+    const data = {
+      page,
+      per_page: 10
+    }
+    const that = this;
+    request({
+      url: '/api/v1/attachments',
+      data,
+      that
+    }).then(res => {
+      let cats = this.data.cats
+      cats = cats.concat(res['data']['attachments'])
+      this.setData({
+        cats,
+        page: res['data']['page'],
+        total: res['data']['total']
+      })
+    })
   },
 
   /**

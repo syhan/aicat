@@ -1,4 +1,5 @@
 // pages/post/post.js
+const { request } = require("../../http/request.js");
 Page({
 
   /**
@@ -9,7 +10,8 @@ Page({
     name: '',
     intro: '',
     sex: 'female',
-    location: '添加地点'
+    location: '添加地点',
+    attachment_ids: []
   },
 
   selectImages() {
@@ -28,14 +30,38 @@ Page({
   },
 
   uplaodFile(files) {
-    console.log('upload files', files)
-    // 文件上传的函数，返回一个promise
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve('as if it works')
-        }, 1000)
+      let resources = []
+      let count = 0
+      files.tempFilePaths.forEach((path) => {
+        wx.uploadFile({
+          url: 'https://cat.isekai.me/api/v1/attachments',
+          filePath: path,
+          name: 'file',
+          header: {
+            "X-App-Auth": wx.getStorageSync("token"),
+          },
+          success: (res) => {
+            this.setData({
+              attachment_ids: this.data.attachment_ids.concat(JSON.parse(res.data).data.attachment_id)
+            })
+            resources.push(path)
+          },
+          complete: () => {
+            count++
+            if (count === files.tempFilePaths.length) {
+              resolve({urls: resources})
+            }
+          }
+        })
+      })
     })
-},
+    
+  },
+
+  uploadError(e) {
+    console.log(e)
+  },
 
   previewImage: function(e){
     wx.previewImage({
@@ -46,7 +72,37 @@ Page({
 
   customSubmit(e) {
     const infos = e.detail.value
-    console.log({...infos, attachments: this.data.attachments})
+    console.log({})
+    request({
+      url: '/api/v1/attachments/submit',
+      method: 'POST',
+      data: {
+        ...infos,
+        attachment_ids: this.data.attachment_ids,
+        sex: this.data.sex
+      }
+    }).then(res => {
+      wx.showToast({
+        title: '发布成功',
+        icon: 'success',
+        duration: 2000,
+        success: () => {
+          setTimeout(() => {
+            wx.switchTab({
+              url: '/pages/index/index',
+            })
+            this.setData({
+              photos: [],
+              name: '',
+              intro: '',
+              sex: 'female',
+              location: '添加地点',
+              attachment_ids: []
+            })
+          }, 2000)
+        }
+      })
+    })
   },
   /**
    * Lifecycle function--Called when page load
@@ -58,8 +114,8 @@ Page({
 
     this.setData({
       selectImages: this.selectImages.bind(this),
-      uplaodFile: this.uplaodFile.bind(this)
-  })
+      uplaodFile: this.uplaodFile.bind(this),
+    })
   },
 
   chooseFemale() {
