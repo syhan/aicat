@@ -79,6 +79,7 @@ Page({
       data: {
         ...infos,
         attachment_ids: this.data.attachment_ids,
+        intro: this.data.intro,
         sex: this.data.sex
       }
     }).then(res => {
