@@ -30,9 +30,18 @@ Page({
 
   like(){
     this.data.pet.liked = !!!this.data.pet.liked;
-    this.setData({
-      pet: this.data.pet
-    });
+
+    let id = this.data.pet.id;
+    const that = this
+    request({
+      url: `/api/v1/attachments/${id}/like`,
+      method: 'POST',
+      that
+    }).then(res => {
+      that.setData({
+        pet: that.data.pet
+      });
+    })
   },
 
   favorite() {
