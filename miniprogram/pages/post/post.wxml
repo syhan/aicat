@@ -15,14 +15,14 @@
       </mp-cells>
       <mp-cells>
         <mp-cell>
-          <view style="width: 693rpx; height: 106rpx; display: block; box-sizing: border-box">
+          <view style="width: 693rpx; height: 106rpx; display: flex; box-sizing: border-box; justify-content: space-between;">
             <view style="width: 48%; height: 56px; border-radius: 12px; border: 1px solid #FF8B84;" class="{{sex === 'female' ? '' :'deactivated'}}" bindtap="chooseFemale">
               <view style="background: #FFF2F1; border-radius: 50%; width: 32px; height: 32px; position: relative; left: 37rpx; top: 22rpx">
                 <image src="../../images/female.png" style="width: 17px; height: 17px; position: relative; left: 14rpx; top: 12rpx"></image>
               </view>
               <text style="color: #FF8B84; position: relative; left: 130rpx; top: -29rpx; font-size: 16px">女孩子</text>
             </view>
-            <view style="width: 48%; height: 56px; border-radius: 12px; border: 1px solid #1AB1C5; position: relative; left: 357rpx; top: -106rpx" class="{{sex === 'male' ? '' :'deactivated'}}" bindtap="chooseMale">
+            <view style="width: 48%; height: 56px; border-radius: 12px; border: 1px solid #1AB1C5;" class="{{sex === 'male' ? '' :'deactivated'}}" bindtap="chooseMale">
               <view style="background: #E6F7F8; border-radius: 50%; width: 32px; height: 32px; position: relative; left: 37rpx; top: 22rpx">
                 <image src="../../images/male.png" style="width: 17px; height: 17px; position: relative; left: 14rpx; top: 12rpx"></image>
               </view>
