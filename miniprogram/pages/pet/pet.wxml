@@ -4,7 +4,7 @@
       <view class="weui-flex__item weui-flex" style="justify-content: center; width: 100%;">
         <view style="width: 100%; height: 380px;">
           <view class="swiper-item">
-            <image src="https://cat.isekai.me{{pet.document}}" mode="scaleToFill" style="width: 100%; height: 380px;" />
+            <image src="https://cat.isekai.me{{pet.document}}" mode="aspectFill" style="width: 100%; height: 380px;" />
           </view>
         </view>
       </view>
@@ -31,18 +31,19 @@
       <view class="weui-panel__bd">
         <view class="weui-cells">
           <view class="weui-cell" style="display: flex; flex-direction: row; align-content: space-around;">
-            <view class="weui-cell__hd" style="width: 140px; background: #F6F8FB; border-radius: 20px; position: relative; left: 58rpx; top: -2rpx">
-              <image src="../../images/input.png" style="height: 24px; width: 82px; position: relative; left: 29rpx; top: 6rpx" mode="scaleToFit"></image>
+            <view class="weui-cell__hd" style="width: 140px; background: #F6F8FB; border-radius: 20px; position: relative; left: 49rpx; top: -2rpx">
+              <!-- <image src="../../images/input.png" style="height: 24px; width: 82px; position: relative; left: 29rpx; top: 6rpx" mode="scaleToFit"></image> -->
+              <input type="text" placeholder="    说点什么..." style="width: 249rpx; height: 66rpx; display: block; box-sizing: border-box"></input>
             </view>
             <view style="width: 100px;"></view>
             <view class="weui-cell__bd">
               <view style="display: flex; flex-direction: row; align-content: space-around; width: 300rpx; height: 58rpx; box-sizing: border-box">
                 <view style="display: flex; flex-direction: column; align-items: center; width: 120rpx; height: 60rpx; box-sizing: border-box">
-                  <image src="../../images/liked.png" mode="aspectFit" style="width: 20.9px; height: 18.23px;"></image>
+                  <image src="{{pet.liked ? '../../images/liked.png' : '../../images/like.png'}}" mode="aspectFit" style="width: 20.9px; height: 18.23px;" bindtap="like"></image>
                   <text style="font-size: 10px; color: #505A62;">{{pet.totalLiked}}</text>
                 </view>
                 <view style="display: flex; flex-direction: column; align-items: center; width: 120rpx; height: 60rpx; box-sizing: border-box;">
-                  <image src="../../images/favorited.png" mode="aspectFit" style="width: 20.9px; height: 18.23px;"></image>
+                  <image src="{{pet.favorited ? '../../images/favorited.png' : '../../images/favorite.png'}}" mode="aspectFit" style="width: 20.9px; height: 18.23px;" bindtap="favorite"></image>
                   <text style="font-size: 10px; color: #505A62;">{{pet.totalFavorited}}</text>
                 </view>
                 <view style="display: flex; flex-direction: column; align-items: center; width: 120rpx; height: 60rpx; box-sizing: border-box;">
@@ -50,7 +51,7 @@
                   <text style="font-size: 10px; color: #505A62;">{{pet.totalComments}}</text>
                 </view>
                 <view style="display: flex; flex-direction: column; align-items: center; width: 120rpx; height: 60rpx; box-sizing: border-box;">
-                  <image src="../../images/shared.png" mode="aspectFit" style="width: 20.9px; height: 18.23px;"></image>
+                  <image src="../../images/share.png" mode="aspectFit" style="width: 20.9px; height: 18.23px;"></image>
                   <text style="font-size: 10px; color: #505A62;">{{pet.totalShared}}</text>
                 </view>
               </view>
@@ -60,12 +61,4 @@
       </view>
     </view>
   </view>
-  <!-- <mp-half-screen-dialog show="{{showBarrageDialog}}" wx:if="{{enableBarrage}}">
-    <view slot="footer">
-      <input class="send-box" placeholder="发个友善的弹幕见证当下" value="{{barrageContent}}" maxlength="20" confirm-type="send" bindinput="bindBarrage" bindconfirm="sendBarrage"></input>
-      <button size="mini" bindtap="sendBarrage">
-        <mp-icon icon="done" color="rgba(0, 0, 0, .9)" size="24"></mp-icon>
-      </button>
-    </view>
-  </mp-half-screen-dialog> -->
 </view>

@@ -28,6 +28,20 @@ Page({
     console.log(this.data)
   },
 
+  like(){
+    this.data.pet.liked = !!!this.data.pet.liked;
+    this.setData({
+      pet: this.data.pet
+    });
+  },
+
+  favorite() {
+    this.data.pet.favorited = !!!this.data.pet.favorited;
+    this.setData({
+      pet: this.data.pet
+    });
+  },
+
   /**
    * Lifecycle function--Called when page is initially rendered
    */
