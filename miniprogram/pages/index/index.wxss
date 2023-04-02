@@ -2,14 +2,12 @@
   width: 32px;
   display: flex;
   flex-direction: column;
-
   justify-content: center;
-
-  margin-bottom: 9px;
-;}
+  align-items: center;
+}
 
 .small-button-img {
-  width: 26px;
+  width: 27.33px;
   height: 26px;
 }
 

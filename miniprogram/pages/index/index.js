@@ -12,6 +12,8 @@ Page({
   likeClick(e) {
     const id = e.currentTarget.dataset.pet
     const index = this.data.cats.findIndex(cat => cat.id === id)
+
+    console.log(index)
     const that = this
     request({
       url: `/api/v1/attachments/${id}/like`,
@@ -19,8 +21,9 @@ Page({
       that
     }).then(res => {
       let data = {}
-      data[`cats[${index}].liked`] = true
-      this.setData(data)
+      this.setData({
+        [`cats[${index}].liked`]: true
+      })
     })
   },
   /**
