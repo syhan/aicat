@@ -6,14 +6,12 @@ Page({
    * Page initial data
    */
   data: {
-    cats: [
-    ],
-    animation: {}
+    cats: [],
   },
 
   likeClick(e) {
-    const id = e.detail.value.id
-    const index = e.detail.value.index
+    const id = e.currentTarget.dataset.pet
+    const index = this.data.cats.findIndex(cat => cat.id === id)
     const that = this
     request({
       url: `/api/v1/attachments/${id}/like`,
@@ -46,40 +44,6 @@ Page({
         total: res['data']['total']
       })
     })
-    var animation = wx.createAnimation({
-      duration: 500,
-      timingFunction: 'ease',
-     })
-    this.animation = animation
-    var next = true;
-    //连续动画关键步骤
-    setInterval(function () {
-     //2: 调用动画实例方法来描述动画
-     if (next) {
-      animation.translateX(4).step();
-      animation.rotate(19).step()
-      next = !next;
-     } else {
-      animation.translateX(-4).step();
-      animation.rotate(-19).step()
-      next = !next;
-     }
-     //3: 将动画export导出，把动画数据传递组件animation的属性 
-     this.setData({
-      animation: animation.export()
-     })
-    }.bind(this), 600)
-    
-    // wx.request({
-    //   url: 'https://cat.isekai.me/api/v1/attachments',
-    //   success: (res) => {
-    //     this.setData({
-    //       cats: res.data['data']['attachments'],
-    //       page: res.data['data']['page'],
-    //       total: res.data['data']['total']
-    //     })
-    //   }
-    // })
   },
 
   /**

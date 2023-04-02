@@ -1,4 +1,21 @@
-image {
-  border-radius: 5%;
+.small-button {
+  width: 32px;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  margin-bottom: 9px;
+;}
+
+.small-button-img {
+  width: 26px;
+  height: 26px;
 }
 
+.small-button-lbl {
+  font-size: 10px;
+  color: white;
+  width: 26px;
+  text-align: center;
+}
