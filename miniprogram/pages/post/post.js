@@ -93,7 +93,7 @@ Page({
               url: "/api/v1/attachments",
               method: "POST",
               data: {
-                url: data.Key
+                url: '/uploads/' + path.split('/')[path.split('/').length - 1]
               }
             }).then((res) => {
               that.setData({
