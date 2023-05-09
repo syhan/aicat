@@ -6,34 +6,20 @@
           <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{photos}}" max-count="5" title="" tips=""></mp-uploader>
         </mp-cell>
       </mp-cells>
-
-      
       <mp-cells>
         <mp-cell>
-          <input class="name" value="{{name}}" placeholder="填写宠物昵称" name="animal_name"></input>
-        </mp-cell>
-      </mp-cells>
-      <mp-cells>
-        <mp-cell>
-          <view style="width: 693rpx; height: 106rpx; display: flex; box-sizing: border-box; justify-content: space-between;">
-            <view style="width: 48%; height: 56px; border-radius: 12px; border: 1px solid #FF8B84;" class="{{sex === 'female' ? '' :'deactivated'}}" bindtap="chooseFemale">
-              <view style="background: #FFF2F1; border-radius: 50%; width: 32px; height: 32px; position: relative; left: 37rpx; top: 22rpx">
-                <image src="../../images/female.png" style="width: 17px; height: 17px; position: relative; left: 14rpx; top: 12rpx"></image>
-              </view>
-              <text style="color: #FF8B84; position: relative; left: 130rpx; top: -29rpx; font-size: 16px">女孩子</text>
-            </view>
-            <view style="width: 48%; height: 56px; border-radius: 12px; border: 1px solid #1AB1C5;" class="{{sex === 'male' ? '' :'deactivated'}}" bindtap="chooseMale">
-              <view style="background: #E6F7F8; border-radius: 50%; width: 32px; height: 32px; position: relative; left: 37rpx; top: 22rpx">
-                <image src="../../images/male.png" style="width: 17px; height: 17px; position: relative; left: 14rpx; top: 12rpx"></image>
-              </view>
-              <text style="color: #01A8BF; position: relative; left: 130rpx; top: -29rpx; font-size: 16px">男孩子</text>
-            </view>
+          <view bindtap="choosePets">
+            <image src="../../images/post.png" style="width: 24px; height: 24px"></image>
+            <text style="color: #505A62; position: relative; left: 24rpx; top: -11rpx">{{petsText}}</text>
           </view>
         </mp-cell>
       </mp-cells>
       <mp-cells>
         <mp-cell>
-          <textarea name="intro" value="{{intro}}" placeholder="添加描述" maxlength="-1" style="width: 685rpx; height: 272rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx"></textarea>
+          <input class="name" value="{{title}}" placeholder="标题" name="post_title"></input>
+        </mp-cell>
+        <mp-cell>
+          <textarea name="intro" value="{{description}}" placeholder="添加正文" maxlength="-1" style="width: 685rpx; height: 272rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx"></textarea>
         </mp-cell>
       </mp-cells>
       <mp-cells>
@@ -47,10 +33,25 @@
       <mp-cells>
         <mp-cell>
           <view class="weui-form__opr-area">
-            <button type="primary" form-type="submit" style="width: 90%; position: relative; left: 1rpx; top: 111rpx; background-color: #01BFBD">发布</button>
+            <button type="primary" form-type="submit" style="width: 90%; background-color: #01BFBD">发布</button>
           </view>
         </mp-cell>
       </mp-cells>
     </form>
   </view>
 </view>
+<mp-half-screen-dialog 
+  bindbuttontap="buttontap"
+  show="{{showPets}}"
+  maskClosable="{{false}}" 
+  title="选择毛绒"
+  buttons="{{buttons}}"
+>
+  <view>
+    <mp-cells>
+      <mp-checkbox-group prop="checkbox" multi="{{true}}" bindchange="checkboxChange">
+          <mp-checkbox wx:for="{{pets}}" wx:key="value" label="{{item.name}}" value="{{item.value}}" checked="{{item.checked}}"></mp-checkbox>
+      </mp-checkbox-group>
+    </mp-cells>
+  </view>
+</mp-half-screen-dialog>

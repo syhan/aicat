@@ -10,9 +10,15 @@ Page({
     photos: [],
     name: "",
     intro: "",
-    sex: "female",
     location: "添加地点(Coming soon)",
+    petsText: "选择毛绒",
     attachment_ids: [],
+    showPets: false,
+    pets: [{
+      pic: "",
+      name: "",
+      intro: ""
+    }],
   },
 
   selectImages() {
@@ -184,7 +190,7 @@ Page({
    */
   onLoad(options) {
     wx.setNavigationBarTitle({
-      title: "晒宠物",
+      title: "晒毛绒",
     });
 
     this.setData({
@@ -193,15 +199,9 @@ Page({
     });
   },
 
-  chooseFemale() {
+  choosePets() {
     this.setData({
-      sex: "female",
-    });
-  },
-
-  chooseMale() {
-    this.setData({
-      sex: "male",
+      showPets: true,
     });
   },
 
